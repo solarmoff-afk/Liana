@@ -20,3 +20,8 @@ pub unsafe extern "C" fn render(r: f32, g: f32, b: f32) {
     gl::ClearColor(r, g, b, 1.0);
     gl::Clear(gl::COLOR_BUFFER_BIT);
 }
+
+#[no_mangle]
+pub unsafe extern "C" fn setViewport(width: i32, height: i32) {
+    gl::Viewport(0, 0, width, height);
+}
